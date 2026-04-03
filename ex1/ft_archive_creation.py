@@ -7,7 +7,7 @@
 #   By: trakotos <trakotos@student.42antananarivo.   +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/04/03 11:04:39 by trakotos            #+#    #+#            #
-#   Updated: 2026/04/03 13:37:51 by trakotos           ###   ########.fr      #
+#   Updated: 2026/04/03 17:34:20 by trakotos           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -37,7 +37,7 @@ def read_content_file() -> str:
     return new_contents
 
 
-def write_content(contents: str):
+def write_content(contents: str) -> None:
     print("\nTransform data:\n---\n")
     print(contents)
     print("---")
