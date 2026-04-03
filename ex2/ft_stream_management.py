@@ -2,14 +2,15 @@
 # ########################################################################### #
 #   shebang: 1                                                                #
 #                                                          :::      ::::::::  #
-#   ft_archive_creation.py                               :+:      :+:    :+:  #
+#   ft_stream_management.py                              :+:      :+:    :+:  #
 #                                                      +:+ +:+         +:+    #
 #   By: trakotos <trakotos@student.42antananarivo.   +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
-#   Created: 2026/04/03 11:04:39 by trakotos            #+#    #+#            #
-#   Updated: 2026/04/03 13:37:51 by trakotos           ###   ########.fr      #
+#   Created: 2026/04/03 11:33:55 by trakotos            #+#    #+#            #
+#   Updated: 2026/04/03 13:38:11 by trakotos           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
+
 
 import sys
 import typing
@@ -40,8 +41,8 @@ def read_content_file() -> str:
 def write_content(contents: str):
     print("\nTransform data:\n---\n")
     print(contents)
-    print("---")
-    file_name = input("Enter new file name (or empty): ")
+    print("---\nEnter new file name (or empty): ", end="")
+    file_name = sys.stdin.readline().replace("\n", "")
     if file_name != "":
         print(f"Saving data to '{file_name}'")
         f: typing.TextIO | None = None
@@ -59,8 +60,9 @@ def write_content(contents: str):
 
 
 if __name__ == "__main__":
+    print("=== Cyber Archives Recovery & Preservation ===")
     try:
         contents = read_content_file()
         write_content(contents)
     except Exception as e:
-        print(e)
+        print(f"[STDERR] {e}", file=sys.stderr)
