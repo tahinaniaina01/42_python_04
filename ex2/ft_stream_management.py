@@ -7,7 +7,7 @@
 #   By: trakotos <trakotos@student.42antananarivo.   +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/04/03 11:33:55 by trakotos            #+#    #+#            #
-#   Updated: 2026/04/03 17:34:03 by trakotos           ###   ########.fr      #
+#   Updated: 2026/04/04 14:52:21 by trakotos           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -21,7 +21,7 @@ def read_content_file() -> str:
         raise Exception(f"Usage: {sys.argv[0]} <file>")
     file_name = sys.argv[1]
     print(f"Accessing file '{file_name}'")
-    f: typing.TextIO | None = None
+    f: typing.IO[str] | None = None
     try:
         f = open(file_name, "r")
         contents = f.read()
